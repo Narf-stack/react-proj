@@ -10,9 +10,11 @@ const Question = ({title,info}) => {
     <article className='question'>
       <header>
         <h4>{title}</h4>
-        <button className='btn' onClick={readHide}> btn</button>
+        <button className='btn' onClick={readHide}>
+          {readMore ? <AiOutlineMinus /> : <AiOutlinePlus /> }
+        </button>
       </header>
-      <p>{readMore? info: `${info.substring(0,0)}`}</p>
+      <p>{readMore && info}</p>
     </article>
   )
 };
