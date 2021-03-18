@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 import { FaQuoteRight } from 'react-icons/fa';
 import data from './data';
+import Reviews from './review-compo/Reviews'
+
 function App() {
   const [people, setPeople]= useState(data)
   const [index,setIndex]=useState(2)
@@ -23,12 +25,18 @@ function App() {
     return ()=> clearInterval(slider)
   },[index])
 
+  const changeIndex=(value)=>{
+    setIndex(value)
+  }
+
+      // <Reviews index={index} people={people} changeIndex={changeIndex}/>
   return <section className='section'>
       <div className='title'>
-      <h2>
-        <span>/</span>reviews
-      </h2>
+        <h2>
+          <span>/</span>reviews
+        </h2>
       </div>
+
       <div className='section-center'>
         {people.map((person, personIndex) => {
           const {id, image,name,title,quote} = person
