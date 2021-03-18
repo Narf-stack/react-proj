@@ -38,6 +38,10 @@ function App() {
       </section>
       <section className='colors'>
         <h4>list</h4>
+        {list.map((color,index)=>{
+          let data = {index:index, ...color}
+          return <SingleColor key={index} {...data}  />
+        })}
 
       </section>
     </>
