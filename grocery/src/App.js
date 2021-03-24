@@ -39,7 +39,7 @@ function App() {
         <form className='grocery-form'
           onSubmit={handleSubmit}
         >
-          {alert.show && <Alert  {...alert} />}
+          {alert.show && <Alert  {...alert} removeAlert={showAlert}/>}
           <h3>Grocery bud</h3>
           <div className='form-control'>
             <input type="text"
