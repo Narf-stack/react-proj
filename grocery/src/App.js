@@ -19,6 +19,7 @@ function App() {
 
     } else {
       // show alert && add item
+      showAlert(true,'success','added')
       const newItem = {
         id: new Date().getTime().toString,
         title: name
@@ -33,6 +34,11 @@ function App() {
     //parameters with default value
     setAlert({show, msg,type})
 
+  })
+
+  const clearList=(()=>{
+    showAlert(true,'danger','The list is now empty')
+    setList([])
   })
   return (
     <section className='section-center'>
@@ -56,7 +62,7 @@ function App() {
         {list.length > 0 && (
           <div className='grocery-container'>
             <List items={list}/>
-            <button className='clear-btn'>clear items</button>
+            <button className='clear-btn' onClick={clearList}>clear items</button>
           </div>
         )}
     </section>
