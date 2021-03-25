@@ -7,5 +7,8 @@ const AppProvider = ({children}) => {
     {children}
   </AppContext.Provider>
 }
-
+// create custom hook, its name needs to start by 'use'
+export const useGlobalContext=()=>{
+  return useContext(AppContext)
+}
 export {AppContext, AppProvider}
