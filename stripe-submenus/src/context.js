@@ -5,7 +5,7 @@ import sublinks from './data'
 const AppContext = React.createContext()
 
 const AppProvider = ({children})=>{
-  const [isSidebarOpen,setIsSidebarOpen] = useState(true)
+  const [isSidebarOpen,setIsSidebarOpen] = useState(false)
   const [isSubmenuOpen,setIsSubmenuOpen] = useState(true)
 
 
@@ -26,15 +26,15 @@ const AppProvider = ({children})=>{
   }
 
   return <AppContext.Provider
-  value={isSubmenuOpen,isSidebarOpen,
+  value={{isSubmenuOpen,isSidebarOpen,
     openSidebar,openSubmenu, closeSubmenu,
-    closeSidebar}>
+    closeSidebar}}>
     {children}
   </AppContext.Provider>
 
 }
 
-export {AppProvider}
+export {AppProvider, AppContext}
 
 // Set up custom hook
 
